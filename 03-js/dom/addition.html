@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menambahkan 2 angka</title>
+</head>
+<body>
+  <h1>Menambahkan 2 angka</h1>
+  <form id="form">
+    <div>
+      <input type="number" name="left" value="0"> <span>+</span> <input type="number" name="right" value="0"> <span>=</span> <span id="result"></span>
+    </div>
+    <br>
+    <button>Hasil</button>
+  </form>
+
+  <script>
+    const $form = document.getElementById('form');
+    const $result = document.getElementById('result');
+
+    $form.addEventListener('submit', (event) => {
+      // mencegah halamannya melakukan reload
+      event.preventDefault();
+      const left = $form.left.value;
+      const right = $form.right.value;
+
+      const a = parseInt(left, 10);
+      const b = parseInt(right, 10);
+
+      const hasil = a + b;
+      $result.innerText = hasil;
+    });
+  </script>
+</body>
+</html>

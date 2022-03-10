@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator</title>
+
+  <style>
+    .btn {
+      display: inline-block;
+      padding: 8px;
+      width: 8px;
+      border: 1px solid #ccc;
+      margin: 2px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #cecece;
+    }
+    #screen {
+      height: 24px;
+      width: 100%;
+      border: 1px solid #000;
+      text-align: right;
+    }
+    #calc-form {
+      width: 128px;
+    }
+
+    #buttons {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <form id="calc-form" action="">
+    <input id="screen" readonly>
+    <div id="buttons">
+      <div>
+        <div>
+          <div data-input="1" class="btn">1</div>
+          <div data-input="2" class="btn">2</div>
+          <div data-input="3" class="btn">3</div>
+        </div>
+        <div>
+          <div data-input="4" class="btn">4</div>
+          <div data-input="5" class="btn">5</div>
+          <div data-input="6" class="btn">6</div>
+        </div>
+        <div>
+          <div data-input="7" class="btn">7</div>
+          <div data-input="8" class="btn">8</div>
+          <div data-input="9" class="btn">9</div>
+        </div>
+        <div>
+          <div data-input="0" class="btn">0</div>
+          <div data-input="." class="btn">.</div>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <div data-input="+" class="btn">+</div>
+        </div>
+        <div>
+          <div data-input="-" class="btn">-</div>
+        </div>
+        <div>
+          <div data-input="*" class="btn">*</div>
+        </div>
+        <div>
+          <div data-input="/" class="btn">/</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: right;">
+      <button type="reset">C</button>
+      <button id="del" type="button">Del</button>
+      <button>Hitung</button>
+    </div>
+  </form>
+
+  <script src="calculator.js"></script>
+</body>
+</html>

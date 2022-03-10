@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bubble DOM</title>
+
+  <style>
+    .bubble-style {
+      width: 80px;
+      height: 80px;
+      padding: 8px;
+      color: #fff;
+      border-radius: 100%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Jumlah Bubble <span id="counter-el">0</span></h1>
+  <form id="bubble-form">
+    <input type="number" name="countinp" value="1">
+    <select name="colorinp">
+      <option value="#f44336">Red</option>
+      <option value="#4caf50">Green</option>
+      <option value="#2196f3">Blue</option>
+    </select>
+    <button type="submit">Add</button>
+  </form>
+
+  <hr>
+  <div id="bubble-container"></div>
+  <script src="bubble.js"></script>
+</body>
+</html>
