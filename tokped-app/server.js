@@ -128,5 +128,5 @@ app.get('/foobar', (req, res) => {
 
 const port = 8080;
 app.listen(port, () => {
-  console.log('running at localhost:' + port);
+  console.log('running at http://localhost:' + port);
 });

@@ -19,7 +19,7 @@
           <li><a href="/product-catalog">Katalog</a></li>
         </ul>
         <form method="GET" action="/product-catalog">
-          <input name="keyword" class="search-box" role="search" placeholder="Cari produk" />
+          <input name="keyword" class="search-box" role="search" autocomplete="off" placeholder="Cari produk" />
           <button class="btn btn--gray">🔍</button>
         </form>
       </nav>
@@ -39,7 +39,7 @@
 
           <div class="form-group">
             <label for="">Name</label>
-            <input name="name" required>
+            <input autocomplete="off" name="name" required>
           </div>
 
           <div class="form-group">
