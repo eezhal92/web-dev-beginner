@@ -1,0 +1,54 @@
+{% layout "_layout.liquid", addresses: addresses %}
+{% block %}
+<div class="container">
+
+  <div class="items-container">
+    {% for shop in shops %}
+    <div class="item">
+      <div class="toko-card">
+        <div>
+          <h2 class="toko-name">{{ shop.name }}</h2>
+          <p class="toko-address">{{ shop.address }}</p>
+          <p class="toko-phone">{{ shop.phone }}</p>
+        </div>
+        <div class="toko-action">
+          <a class="btn btn--primary-outline" href="/edit-shop/{{ shop.id }}">Edit toko</a>
+          <button data-id="{{ shop.id }}" class="btn btn--danger delete-btn">Hapus</button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+</div>
+
+<script src="/static/js/modal.js"></script>
+<script>
+
+  const buttons = document.querySelectorAll('.delete-btn');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', (event) => {
+      const id = button.getAttribute('data-id');
+      fetch(`http://localhost:8080/delete-shop/${id}`, {
+        method: 'DELETE'
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          alert("Berhasil menghapus toko");
+          event.target.parentElement.parentElement.parentElement.remove();
+        } else {
+          alert(response.statusText);
+        }
+      })
+    })
+  })
+
+  const addbtn = document.querySelector('.add-toko');
+
+  addbtn.addEventListener('click', () => {
+    window.addModal.show();
+  });
+</script>
+{% endblock %}

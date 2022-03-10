@@ -1,0 +1,36 @@
+{% layout "_layout.liquid", addresses: addresses %}
+{% block %}
+<div class="container">
+  <div class="items-container">
+    {% if products.length == 0%}
+    <p>Produk tidak dapat ditemukan</p>
+    {% endif %}
+
+    {% for product in products %}
+    <div class="item">
+      <div class="product-card">
+        <div class="product-bg">
+          <img class="product-card__img" src="https://picsum.photos/200/180?random={{ product.id }}" alt="" width="100%">
+        </div>
+
+        <div class="product-card-inner">
+          <h2 class="product-name">{{ product.name }}</h2>
+          <p class="toko-address">USD {{ product.price }}</p>
+          <p class="toko-address">{{ product.seller }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+<script src="/static/js/modal.js"></script>
+<script>
+  const addbtn = document.querySelector('.add-toko');
+
+  addbtn.addEventListener('click', () => {
+    window.addModal.show();
+  });
+</script>
+{% endblock %}

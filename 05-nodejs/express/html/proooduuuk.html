@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INi produkkkkk</h1>
+
+    <div id="product"></div>
+
+    <script>
+        fetch('/data-product').then(res => res.json()).then((data) =>{
+            // console.log('ini datatnyayayyayaya', data);
+
+            const pr = document.getElementById('product')
+
+            var text = '';
+            for (let i = 0; i <  data.length; i++) {
+                const item = data[i];
+                text += '<div>' + item.name + '</div>'
+            }
+
+            pr.innerHTML = text;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Iini template liquid, sa mo taro data product</h1>
+    
+    <div id="produckt-template">
+    {% for produk in data_produk_ku %}
+        <div>{{ produk.name }}</div>
+    {% endfor %}
+    </div>
+</body>
+</html>
